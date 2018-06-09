@@ -2,29 +2,31 @@
 
 //Values //check if its double or float wtf c99
 double   comidaSemana;
-double conducaoSemana; // check this
-double luzMes;
-double aguaMes;
-
+double   conducaoDia;
+double   luzMes;
+double   aguaMes;
 //resultado
-double resultado;
+double   resultado;
 
 int main() {
-   puts("================================================\n");
-   printf("Olá ,vamos calcular uma média do seu gasto anual\n");
-   puts("Instruções -> Nao use , . Apenas .  \n");
-   puts("===============================================\n");
-   printf("Insira quanto você gasta por SEMANA nas compras do mercado E alimentação\n");
+   printf("=============================================\n");
+   printf("Olá,vamos calcular uma média do seu gasto anual\n");
+   printf("Instruções-> Nao use ,  Apenas . ");
+   printf("===========================================\n");
+
 
    //Calcula quanto a pessoa gasta por ano de luz(e converte)
+   printf("Insira quanto você gasta por SEMANA nas compras do mercado E alimentação\n");
    scanf("%lf", &comidaSemana);
    //printf("Voce digitou: %.2f\n", comidaSemana);
    comidaSemana = comidaSemana * 52;
    
-   //Calcula quanto a pessoa gasta por semana de condução
-   printf("Quanto voce gasta por semana de Condução?\n");
-   scanf("%lf", &conducaoSemana);
-   conducaoSemana = conducaoSemana * 52;
+   //Calcula quanto os gastos por dia de condução
+   printf("Quanto voce gasta por dia de Condução? (em um dia útil)\n");
+   scanf("%lf", &conducaoDia);
+   conducaoDia = conducaoDia * 281; //ignora domingo
+   //suponhamos que sejam 6 dias de condução por semana
+   //-> 1 mes = 4 semanas. = 4 domingos = 84dias ->365 dias - 84dias = 281dias
 
    //Calcula quanto a pessoa gasta por ano de luz(e converte)
    printf("Quanto voce gasta por Mês de Luz?\n");
@@ -36,10 +38,11 @@ int main() {
    scanf("%lf", &aguaMes);
    aguaMes = aguaMes * 12;
    
-   //resultado
-   resultado = aguaMes + luzMes + conducaoSemana + comidaSemana;
-   printf("Sua Média de gastos Anual é de: %.2f\n", resultado);
+   //resultado final
+   //soma básica(o scanf já formatou os dados com VIRGULA com o %lf , já que são double)
+   resultado = aguaMes + luzMes + conducaoDia + comidaSemana;
+
+   printf("==============Sua Média de gastos Anual é de ===>  :R$%.2f\n  <======", resultado);
 
    return 0;
-   
 }
