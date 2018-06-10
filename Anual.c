@@ -11,7 +11,7 @@ int main() {
    printf("Este programa e uma dedicatoria ao japa\n");
    printf("=============================================\n");
    printf("Ola,vamos calcular uma media do seu gasto anual\n");
-   printf("Instrucoes-> Nao use VIRGULA  Apenas Ponto ");
+   printf("Instrucoes-> Nao use VIRGULA  Apenas Ponto \n");
    printf("===========================================\n");
 
 
